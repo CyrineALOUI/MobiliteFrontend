@@ -1,0 +1,116 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Update Opportunity</h4>
+                    </div>
+                    <div class="content">
+                        <form [formGroup]="form" (submit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name Opportunity</label>
+                                        <input type="text" class="form-control" formControlName="nameOpportunity" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label>Speciality</label>
+                                        <select class="form-control" formControlName="speciality">
+                                            <option value="">--Please choose speciality--</option>
+                                            <option value="SAE">SAE</option>
+                                            <option value="TWIN">TWIN</option>
+                                            <option value="SIM">SIM</option>
+                                            <option value="SLEAM">SLEAM</option>
+                                            <option value="GAMIX">GAMIX</option>
+                                            <option value="DS">DS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Start Date</label>
+                                        <input type="date" class="form-control" formControlName="startDate">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>End Date</label>
+                                        <input type="date" class="form-control" formControlName="endDate">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label>Type Opportunity</label>
+                                        <select class="form-control" formControlName="typeOpportunity">
+                                            <option value="">--Please choose type opportunity--</option>
+                                            <option value="Exchange_Semester">Exchange Semester</option>
+                                            <option value="Double_Degree">Double Degree</option>
+                                        </select>
+                                    </div>
+                                </div>   
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label>Type Selection</label>
+                                        <select class="form-control" formControlName="typeSelection">
+                                            <option value="">--Please choose type selection--</option>
+                                            <option value="BY_CAPACITY">BY CAPACITY</option>
+                                            <option value="ON_FILE">ON FILE</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                       
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Capacity</label>
+                                        <input type="number" class="form-control" formControlName="capacity">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Formula</label>
+                                        <input type="text" class="form-control" formControlName="formula">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Note Eliminatoire</label>
+                                        <input type="number" class="form-control" formControlName="noteEliminatoire">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea rows="5" class="form-control" formControlName="description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-fill pull-right" >Update</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+</div>
+
+

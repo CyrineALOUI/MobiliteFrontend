@@ -1,0 +1,75 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Add New Opportunity</h4>
+                    </div>
+                    <div class="content">
+                        <form (ngSubmit)="onSubmit(candidacyForm)" #candidacyForm="ngForm" enctype="multipart/form-data" >
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Average 1st year</label>
+                                        <input type="number" step="0.01" class="form-control" name="average_1year" ngModel>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Average 2nd year</label>
+                                        <input type="number" step="0.01" class="form-control" name="average_2year" ngModel>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Average 3rd year</label>
+                                        <input type="number" step="0.01" class="form-control" name="average_3year" ngModel>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row"></div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                    <label>Speciality</label>
+                                        <select name="speciality" class="form-control" ngModel>
+                                            <option value="">--Please choose speciality--</option>
+                                            <option value="SAE">SAE</option>
+                                            <option value="TWIN">TWIN</option>
+                                            <option value="SIM">SIM</option>
+                                            <option value="SLEAM">SLEAM</option>
+                                            <option value="GAMIX">GAMIX</option>
+                                            <option value="DS">DS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                           
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                        <label>Upload File</label>
+                                        <input type="file" class="form-control"  name="file" (change)="handleFileInput($event.target.files)" >
+                                </div>
+                                    
+                            </div>
+                        </div>
+                            
+
+                            <button type="submit" class="btn btn-danger btn-fill pull-right" >Add</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+</div>
+
+
+  

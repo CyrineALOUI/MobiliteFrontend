@@ -1,0 +1,89 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">List Of Opportunities</h4>
+                        <br>
+                        <button type="submit" class="btn btn-secondary btn-fill pull-left" (click)="onAddOpportunity()"><i class="fa fa-plus"></i> |  Add New Opportunity</button><br>
+                    </div>
+                    <br>    
+                    <div class="col-md-4">
+                        <br>
+                        <input type="text" class="form-control" placeholder="Search..." id="search" [(ngModel)]="searchTerm" (keyup)="onSearch()">  
+                    </div>  
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Speciality</th>
+                                        <th>Capacity</th>
+                                        <th>Type Opportunity</th>
+                                        <th>Type Selection</th>
+                                        <th>Formula</th>
+                                        <th>Note Eliminatoire</th>
+                                        <th>Availability</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr *ngFor="let opp of searchedOpportunities | slice:(currentPage-1)*itemsPerPage:currentPage*itemsPerPage">
+                                        <td>{{opp.idOpportunity}}</td>
+                                        <td>{{opp.nameOpportunity}}</td>
+                                        <td>{{opp.description}}</td>
+                                        <td>{{opp.startDate}}</td>
+                                        <td>{{opp.endDate}}</td>
+                                        <td>{{opp.speciality}}</td>
+                                        <td>{{opp.capacity}}</td>
+                                        <td>{{opp.typeOpportunity}}</td>
+                                        <td>{{opp.typeSelection}}</td>
+                                        <td>{{opp.formula}}</td>
+                                        <td>{{opp.noteEliminatoire}}</td>  
+                                        <td class="availability">
+                                         <span [ngClass]="{'available': opp.availability == 'Available', 'not-available': opp.availability == 'Not available'}">{{opp.availability}}</span> 
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-secondary btn-fill" (click)="updateCandidacyStatus(opp.idOpportunity)" >Update Candidacy Status</button>
+                                            <br><hr>
+                                            <button type="button" class="btn btn-primary btn-fill" [routerLink]="['/update_opportunity', opp.idOpportunity]" ><i class="fa fa-edit"></i></button> 
+                                            <button type="button" class="btn btn-secondary btn-fill" (click)="generateQRCode(opp)"><i class="fa fa-qrcode"></i></button>
+                                            <img *ngIf="opp.qrCodeImage" [src]="opp.qrCodeImage" alt="QR Code">
+                                            <button type="button" class="btn btn-success btn-fill" (click)="generatePdf(opp.idOpportunity)"><i class="fa fa-file-pdf-o"></i></button>
+                                            <button type="button" class="btn btn-danger btn-fill" (click)="deleteOpportunity(opp.idOpportunity)" ><i class="fa fa-trash"></i></button>
+                                        </td>            
+                                    </tr>
+                                </tbody>
+                          </table>
+                        <!--Pagination-->
+                        <div class="center">
+                            <ul class="pagination">
+                            <li class="page-item" [class.disabled]="currentPage == 1">
+                              <a class="page-link"  (click)="currentPage = 1">&laquo;</a>
+                            </li>
+                            <li class="page-item" [class.disabled]="currentPage == 1">
+                              <a class="page-link" (click)="currentPage = currentPage - 1">&lt;</a>
+                            </li>
+                            <li class="page-item" *ngFor="let page of getPages()" [class.active]="currentPage == page">
+                              <a class="page-link"  (click)="currentPage = page">{{ page }}</a>
+                            </li>
+                            <li class="page-item" [class.disabled]="currentPage == getTotalPages()">
+                              <a class="page-link"  (click)="currentPage = currentPage + 1">&gt;</a>
+                            </li>
+                            <li class="page-item" [class.disabled]="currentPage == getTotalPages()">
+                              <a class="page-link"  (click)="currentPage = getTotalPages()">&raquo;</a>
+                            </li>
+                            </ul> 
+                        </div>
+                    </div>     
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

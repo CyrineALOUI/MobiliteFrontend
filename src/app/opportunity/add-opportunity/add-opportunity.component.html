@@ -1,0 +1,115 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Add New Opportunity</h4>
+                    </div>
+                    <div class="content">
+                        <form #opp="ngForm" >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name Opportunity</label>
+                                        <input name="nameOpportunity" type="text" class="form-control" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label>Speciality</label>
+                                        <select name="speciality" class="form-control" ngModel>
+                                            <option value="">--Please choose speciality--</option>
+                                            <option value="SAE">SAE</option>
+                                            <option value="TWIN">TWIN</option>
+                                            <option value="SIM">SIM</option>
+                                            <option value="SLEAM">SLEAM</option>
+                                            <option value="GAMIX">GAMIX</option>
+                                            <option value="DS">DS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Start Date</label>
+                                        <input name="startDate" type="date" class="form-control" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>End Date</label>
+                                        <input name="endDate" type="date" class="form-control" ngModel>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label>Type Opportunity</label>
+                                        <select  name="typeOpportunity" class="form-control" ngModel>
+                                            <option value="">--Please choose type opportunity--</option>
+                                            <option value="Exchange_Semester">Exchange Semester</option>
+                                            <option value="Double_Degree">Double Degree</option>
+                                        </select>
+                                    </div>
+                                </div>   
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    <label>Type Selection</label>
+                                        <select name="typeSelection" class="form-control" ngModel>
+                                            <option value="">--Please choose type selection--</option>
+                                            <option value="BY_CAPACITY">BY CAPACITY</option>
+                                            <option value="ON_FILE">ON FILE</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                       
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Capacity</label>
+                                        <input name="capacity" type="number" class="form-control" ngModel>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Formula</label>
+                                        <input name="formula" type="text" class="form-control" ngModel>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Note Eliminatoire</label>
+                                        <input name="noteEliminatoire" type="number" class="form-control" ngModel>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea name="description" rows="5" class="form-control" ngModel></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-fill pull-right" (click)="addOpportunity(opp.value)">Add</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+</div>
+
